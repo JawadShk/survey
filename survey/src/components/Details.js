@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Details() {
+function Details(props) {
   return (
     <div>
         <div className="container">
@@ -8,7 +8,7 @@ function Details() {
                 <div className="mt-3">
                     <div className="card text-left">
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={props.submit}>
                                 <div className="form-group mt-2 mb-2">
                                     <label htmlFor="">
                                         {" "}
@@ -20,6 +20,7 @@ function Details() {
                                       className='form-control'
                                       placeholder='Please Enter Your Name'
                                       autoComplete='off' 
+                                      required
                                     />
                                 </div>
                                 <div className="form-group mt-2 mb-2">
@@ -28,18 +29,19 @@ function Details() {
                                         <b>2.</b>Email
                                     </label>
                                     <input 
-                                      type="text"
+                                      type="email"
                                       name='email'
                                       className='form-control'
                                       placeholder='Please Enter Your Email'
                                       autoComplete='off' 
+                                      required
                                     />
                                 </div>
                                 <button type='submit' className="btn btn-primary">Next</button>
                             </form>
                             <center>
                                 <span className="badge text-bg-primary">1</span>
-                                <span className="badge disabled">2</span>
+                                <span className="badge text-black">2</span>
                             </center>
                         </div>
                     </div>

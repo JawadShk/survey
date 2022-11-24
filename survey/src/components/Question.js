@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Question() {
+function Question(props) {
   return (
     <div>
         <div className="container-fluid">
@@ -8,7 +8,7 @@ function Question() {
                 <div className="mt-3">
                     <div className="card text-left">
                         <div className="card-body">
-                            <form>
+                            <form onSubmit={props.submit}>
                                 <div className="form-group mt-2 mb-2">
                                     <label htmlFor="">
                                         {" "}
@@ -19,6 +19,7 @@ function Question() {
                                       type="radio"
                                       id="teacher"
                                       name= "q1"
+                                      value="Teaching"
                                       autoComplete='off'
                                     />{" "}
                                     <label htmlFor="teacher">Teaching</label>
@@ -27,6 +28,7 @@ function Question() {
                                       type="radio"
                                       id='student'
                                       name= "q1"
+                                      value="Student"
                                       autoComplete='off'    
                                     />{" "}
                                     <label htmlFor="student">Student</label>
@@ -35,6 +37,7 @@ function Question() {
                                       type="radio"
                                       id='programmer'
                                       name= "q1"
+                                      value= "Programmer"
                                       autoComplete='off'    
                                     />{" "}
                                     <label htmlFor="programmer">Programmer</label>
@@ -47,7 +50,7 @@ function Question() {
                                     <input 
                                       type="text" 
                                       className="form-control"
-                                      disabled
+                                      name='other'
                                       autoComplete='off'
                                       placeholder='Type here if not listed.'
                                     />{" "}
@@ -58,11 +61,11 @@ function Question() {
                                         <b>4.</b>PLease rate our course
                                     </label>
                                     <br />
-                                    <input type="radio" id='poor' name='q2' autoComplete='off'/>
+                                    <input type="radio" id='poor' name='q2' value="Poor" autoComplete='off'/>
                                     {" "}
                                     <label htmlFor="poor">Poor</label> {" "}
                                     {" "}
-                                    <input type="radio" id='good' name='q2' autoComplete='off'/>
+                                    <input type="radio" id='good' name='q2' value="Good" autoComplete='off'/>
                                     {" "}
                                     <label htmlFor="good">Good</label> {" "}
                                     {" "}
@@ -70,6 +73,7 @@ function Question() {
                                       type="radio"
                                       id='excellent'
                                       name='q2'
+                                      value="Excellent"
                                       autoComplete='off'
                                     />{" "}
                                     <label htmlFor="excellent">Excellent</label>
@@ -84,7 +88,7 @@ function Question() {
                                 <button className="btn btn-primary mt-2" type='submit'>Save</button>
                             </form>
                             <center>
-                                <span className="badge badge-pill disabled">1</span>
+                                <span className="badge text-black">1</span>
                                 <span className="badge text-bg-primary">2</span>
                             </center>
                         </div>

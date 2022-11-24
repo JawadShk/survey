@@ -1,9 +1,11 @@
 import './App.css';
 import Container from './components/Container';
+import React from 'react';
+
 
 function App() {
   return (
-    <div style={{backgroundColor: 'dimgray'}}>
+    <div>
       <Container />
     </div>
   );
